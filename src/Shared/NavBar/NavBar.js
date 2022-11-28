@@ -70,7 +70,7 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal p-0">
 
                     <li>
-                            <Link to='/'>Home</Link>
+                            <Link to='/'>My Home</Link>
                         </li>
                         <li>
                             <Link to='/login'>Login</Link>
@@ -114,57 +114,7 @@ const NavBar = () => {
                 </div>
                 
             </div>
-            {/* ////////////////////// */}
-            {/* <div className="navbar bg-base-100">
-                <div className="flex-1">
-                    <Link className="btn btn-ghost normal-case text-xl bg-error-content text-white">Furnishly</Link>
-                </div>
-                <div className="flex-none">
-                    <ul className="menu menu-horizontal p-0">
-                        <li>
-                            <Link to='/'>Home</Link>
-                        </li>
-                        <li>
-                            <Link to='/login'>Login</Link>
-                        </li>
-                        <li>
-                            <Link to='/signup'>SignUp</Link>
-                        </li>
-
-                        <li >
-                            <Link>
-                               My Orders
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link>
-                              Add a Product
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                              My Product
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                              All Seller
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                            All Buyer
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                             Reported Items
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            </div> */}
+            
         </div>
     );
 };
