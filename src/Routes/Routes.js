@@ -1,9 +1,10 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from '../Layout/Main';
-import BedRoom from '../Pages/Home/Category/BedRoom/BedRoom';
-import DiningRoom from '../Pages/Home/Category/DiningRoom/DiningRoom';
-import SittingRoom from '../Pages/Home/Category/SittingRoom/SittingRoom';
+import Rooms from '../Pages/Home/Category/Rooms/Rooms';
+import RoomsDetails from '../Pages/Home/Category/RoomsDetails/RoomsDetails';
+
+
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import SignUp from '../Pages/SignUp/SignUp';
@@ -17,7 +18,7 @@ import SignUp from '../Pages/SignUp/SignUp';
                     path:'/',
                     element:<Home></Home>,
                     loader: async()=>{
-                        return fetch('http://localhost:5000/sitting')
+                        return fetch('http://localhost:5000/category')
                     }
                   
                 },
@@ -30,23 +31,22 @@ import SignUp from '../Pages/SignUp/SignUp';
                     element:<SignUp></SignUp>
                 },
                 {
-                    path:'/sitting',
+                    path:'/category/:id',
                  
-                    element:<SittingRoom></SittingRoom>,
+                    element:<Rooms></Rooms>,
+                    loader: async({params})=>{
+                            console.log(params.id)
+                            return fetch(`http://localhost:5000/allCollection/${params.id}`)
+                    } 
+                }
+                ,
+                {
+                    path:'/allCollection',
+                    element:<RoomsDetails></RoomsDetails>,
                     loader: async()=>{
-                        return fetch('http://localhost:5000/sitting')
-                    }
-                  
-                    
-                },
-                {
-                    path:'/bed/:id',
-                    element:<BedRoom></BedRoom>
-                },
-                {
-                    path:'/dining/:id',
-                    element:<DiningRoom></DiningRoom>
-                },
+                         return fetch('http://localhost:5000/allCollection')
+                }
+            }
             ]
         },
         {
