@@ -1,6 +1,9 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from '../Layout/Main';
+import BedRoom from '../Pages/Home/Category/BedRoom/BedRoom';
+import DiningRoom from '../Pages/Home/Category/DiningRoom/DiningRoom';
+import SittingRoom from '../Pages/Home/Category/SittingRoom/SittingRoom';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import SignUp from '../Pages/SignUp/SignUp';
@@ -12,7 +15,11 @@ import SignUp from '../Pages/SignUp/SignUp';
             children:[
                 {
                     path:'/',
-                    element:<Home></Home>
+                    element:<Home></Home>,
+                    loader: async()=>{
+                        return fetch('http://localhost:5000/sitting')
+                    }
+                  
                 },
                 {
                     path:'/login',
@@ -22,8 +29,30 @@ import SignUp from '../Pages/SignUp/SignUp';
                     path:'/signup',
                     element:<SignUp></SignUp>
                 },
+                {
+                    path:'/sitting',
+                 
+                    element:<SittingRoom></SittingRoom>,
+                    loader: async()=>{
+                        return fetch('http://localhost:5000/sitting')
+                    }
+                  
+                    
+                },
+                {
+                    path:'/bed/:id',
+                    element:<BedRoom></BedRoom>
+                },
+                {
+                    path:'/dining/:id',
+                    element:<DiningRoom></DiningRoom>
+                },
             ]
-        }
+        },
+        {
+            path:'/*',
+            element:<div>Page Not Found</div>
+        },
     ])
  
 
