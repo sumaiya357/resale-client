@@ -21,12 +21,12 @@ const RoomsDetails = ({ singleDetails }) => {
 
                     <h1 className="text-2xl font-bold">{name}</h1>
                     <div  className='grid grid-cols-2'>
-                    <span className="py-4"> <h4 className="text-1xl font-bold">Original Price:</h4>{OriginalPrice}</span>
-                    <span className="py-4"><h4 className="text-1xl font-bold">Resale Price:</h4> {ResalePrice}</span>
-                    <span className="py-4"> <h4 className="text-1xl font-bold">Year of Use:</h4> {YearofUse}</span>
-                    <span className="py-4"><h4 className="text-1xl font-bold">Posting Time</h4>{PostingTime}</span>
-                    <span className="py-4"><h4 className="text-1xl font-bold">Seller Name:</h4> {SellerName}</span>
-                    <span className="py-4"><h4 className="text-1xl font-bold">location:</h4>{location}</span>
+                    <span className="py-3"> <h4 className="text-1xl font-bold">Original Price:</h4>{OriginalPrice}</span>
+                    <span className="py-3"><h4 className="text-1xl font-bold">Resale Price:</h4> {ResalePrice}</span>
+                    <span className="py-3"> <h4 className="text-1xl font-bold">Year of Use:</h4> {YearofUse}</span>
+                    <span className="py-3"><h4 className="text-1xl font-bold">Posting Time</h4>{PostingTime}</span>
+                    <span className="py-3"><h4 className="text-1xl font-bold">Seller Name:</h4> {SellerName}</span>
+                    <span className="py-3"><h4 className="text-1xl font-bold">location:</h4>{location}</span>
                     </div>
                     <button className="btn btn-primary">Book Now</button>
                 </div>
