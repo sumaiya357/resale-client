@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from '../Layout/Main';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Rooms from '../Pages/Home/Category/Rooms/Rooms';
 import RoomsDetails from '../Pages/Home/Category/RoomsDetails/RoomsDetails';
 
@@ -44,7 +45,7 @@ import SignUp from '../Pages/SignUp/SignUp';
         },
         {
             path:'/*',
-            element:<div>Page Not Found</div>
+            element:<ErrorPage></ErrorPage>
         },
     ])
  

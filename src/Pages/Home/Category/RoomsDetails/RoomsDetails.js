@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import './RoomDetails.css'
 
 
-const RoomsDetails = ({ singleDetails }) => {
+const RoomsDetails = ({ singleDetails,setCategory }) => {
+
     const { name, img, location, ResalePrice, OriginalPrice, YearofUse, PostingTime, SellerName
     } = singleDetails
     console.log(singleDetails)
+
+    
     // useEffect(()=>{
     //     fetch('http://localhost:5000/allCollection')
     //     .then(res => res.json())
@@ -14,7 +17,7 @@ const RoomsDetails = ({ singleDetails }) => {
     // },[])
 
     return (
-        <div className="hero  bg-base-200  mt-10 mx-10 rounded box">
+        <div className="hero  bg-base-200  mt-10 mx-10 rounded box mb-10">
             <div className="hero-content flex-col lg:flex-row">
                 <img src={img} className="image rounded-lg shadow-2xl " />
                 <div>
@@ -28,32 +31,13 @@ const RoomsDetails = ({ singleDetails }) => {
                     <span className="py-3"><h4 className="text-1xl font-bold">Seller Name:</h4> {SellerName}</span>
                     <span className="py-3"><h4 className="text-1xl font-bold">location:</h4>{location}</span>
                     </div>
-                    <button className="btn btn-primary">Book Now</button>
+                    <button className="btn btn-primary"><label htmlFor="bookingModal"
+                    onClick={()=>setCategory(singleDetails)}>Book Now</label></button>
+                    
                 </div>
             </div>
         </div>
 
-        // <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 mx-auto my-10  p-8 '>
-
-
-
-        // <div className="card card-compact w-96 bg-base-100 shadow-xl">
-
-        //        <figure><img className='w-full'  alt="dining table" /></figure>
-        //         <div className="card-body">
-        //             <h2 className="card-title">Furnitures for {name}</h2>
-
-
-        //             <div className="card-actions justify-end">
-        //             <Link>
-        //                <button className="btn btn-primary">See Details</button>
-        //                </Link>
-        //             </div>
-        //         </div>
-
-        //     </div>
-
-        // </div>
     );
 };
 
