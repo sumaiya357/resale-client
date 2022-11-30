@@ -3,6 +3,8 @@ import dining from '../../../assets/dining/dining6.jpeg'
 import bed from '../../../assets/bed/bed4.jpeg'
 import sitting from '../../../assets/sitting/sitting-6.jpg'
 import { Link } from 'react-router-dom';
+import './Category.css'
+
 const Category = ({data}) => {
 //     const{_id,name} =data
 //  console.log(name,_id)
@@ -21,7 +23,7 @@ const Category = ({data}) => {
             <Link to={`/category/${data._id}`}>
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
                
-               <figure><img className='w-full' src={data.img} alt="dining table" /></figure>
+               <figure><img className='w-full img' src={data.img} alt="dining table" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Furnitures for {data.name}</h2>
                     

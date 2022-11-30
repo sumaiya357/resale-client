@@ -36,17 +36,10 @@ import SignUp from '../Pages/SignUp/SignUp';
                     element:<Rooms></Rooms>,
                     loader: async({params})=>{
                             console.log(params.id)
-                            return fetch(`http://localhost:5000/allCollection/${params.id}`)
+                            return fetch(`http://localhost:5000/allcategory/${params.id}`)
                     } 
                 }
-                ,
-                {
-                    path:'/allCollection',
-                    element:<RoomsDetails></RoomsDetails>,
-                    loader: async()=>{
-                         return fetch('http://localhost:5000/allCollection')
-                }
-            }
+           
             ]
         },
         {
