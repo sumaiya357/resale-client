@@ -4,6 +4,7 @@ import { AuthContext } from '../../context/AuthProvider';
 
 const NavBar = () => {
     const {user,logout} = useContext(AuthContext);
+
     const handleLogout =() =>{
         logout()
         .then(() => {})
@@ -57,10 +58,16 @@ const NavBar = () => {
                                
                             </Link>
                         </li> 
-                        
+
                         <li >
                             <Link>
                                My Orders
+                            </Link>
+                        </li>
+
+                        <li >
+                            <Link>
+                              Blog
                             </Link>
                         </li>
 
@@ -137,6 +144,11 @@ const NavBar = () => {
                         <li >
                             <Link>
                                My Orders
+                            </Link>
+                        </li>
+
+                        <li >
+                            <Link to='/blog'>Blog
                             </Link>
                         </li>
 
