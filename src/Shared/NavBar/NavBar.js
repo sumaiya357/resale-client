@@ -3,7 +3,16 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const NavBar = () => {
-    const {user} = useContext(AuthContext);
+    const {user,logout} = useContext(AuthContext);
+    const handleLogout =() =>{
+        logout()
+        .then(() => {})
+        .catch(err=>console.log(err))
+  
+        if(logout){
+          alert('Logout successfull')
+        }
+      }
     return (
         <div>
 
@@ -33,6 +42,22 @@ const NavBar = () => {
                             <Link to='/signup'>SignUp</Link>
                         </li>
 
+                         
+                        <li >
+                            <Link>
+                            {
+                        user?.uid ?
+                        <li>
+                        <Link to='/logout' >Dashboard</Link>
+                    </li>:
+                     <li>
+                     <Link to='/login' className='hidden'>Dashboard</Link>
+                 </li>
+                       }
+                               
+                            </Link>
+                        </li> 
+                        
                         <li >
                             <Link>
                                My Orders
@@ -84,7 +109,8 @@ const NavBar = () => {
                         {
                         user?.uid ?
                         <li>
-                        <Link to='/logout'>Logout</Link>
+                        <Link ><button onClick={handleLogout}>
+                        Logout</button></Link>
                     </li>:
                      <li>
                      <Link to='/login'>Login</Link>
@@ -94,6 +120,20 @@ const NavBar = () => {
                             <Link to='/signup'>SignUp</Link>
                         </li>
 
+                        <li >
+                            <Link>
+                            {
+                        user?.uid ?
+                        <li>
+                        <Link to='/logout' >Dashboard</Link>
+                    </li>:
+                     <li>
+                     <Link to='/login' className='hidden'>Dashboard</Link>
+                 </li>
+                       }
+                               
+                            </Link>
+                        </li>
                         <li >
                             <Link>
                                My Orders
