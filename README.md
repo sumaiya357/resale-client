@@ -1,3 +1,17 @@
+## Features and Functionalities of the project:
+
+1. This website is a site for selling and buying old furniture.
+
+2. Different Categories of furnitures are available  each  having multuple items
+
+3. Here User can create an account and see the products available or sold out.
+
+4. Users who are not authenicated can not have access to a  certain page of the website and they have a restricted user experience.
+
+5. Users can book a products by confirming their booking
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
