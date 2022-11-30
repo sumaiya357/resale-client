@@ -11,7 +11,7 @@ const RoomsDetails = ({ singleDetails,setCategory }) => {
 
     
     // useEffect(()=>{
-    //     fetch('http://localhost:5000/allCollection')
+    //     fetch('https://product-resale-server-vert.vercel.app/allcategoryCollection')
     //     .then(res => res.json())
     //     .then(data=>console.log(data))
     // },[])

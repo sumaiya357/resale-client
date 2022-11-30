@@ -20,7 +20,7 @@ import SignUp from '../Pages/SignUp/SignUp';
                     path:'/',
                     element:<Home></Home>,
                     loader: async()=>{
-                        return fetch('http://localhost:5000/category')
+                        return fetch('https://product-resale-server-vert.vercel.app/allcategory')
                     }
                   
                 },
@@ -42,7 +42,7 @@ import SignUp from '../Pages/SignUp/SignUp';
                     element:<Rooms></Rooms>,
                     loader: async({params})=>{
                             console.log(params.id)
-                            return fetch(`http://localhost:5000/allcategory/${params.id}`)
+                            return fetch(`https://product-resale-server-vert.vercel.app/allcategory/${params.id}`)
                     } 
                 }
            

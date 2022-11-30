@@ -9,6 +9,7 @@ const Rooms = () => {
     console.log('Details:',roomDetails)
    
     const [category,setCategory] =useState(null)
+    const[data, setData] = useState(null)
     
     
     return (

@@ -1,20 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import dining from '../../../assets/dining/dining6.jpeg'
-import bed from '../../../assets/bed/bed4.jpeg'
-import sitting from '../../../assets/sitting/sitting-6.jpg'
+
 import { Link } from 'react-router-dom';
 import './Category.css'
 
 const Category = ({data}) => {
-//     const{_id,name} =data
-//  console.log(name,_id)
-    // const[sittingRoom, setSittingRoom]=useState([])
 
-    // useEffect( () => {
-    //     fetch(`http://localhost:5000/sitting/_id`)
-    //     .then(res => res.json())
-    //     .then(data => setSittingRoom(data))
-    // },[])
     return (
 
         <div >
