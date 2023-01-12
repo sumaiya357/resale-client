@@ -1,19 +1,15 @@
 [
-    {
-    
-      "name": "Dining Room",
-       "img": "https://media.karousell.com/media/photos/products/2021/6/26/dining_table_set_high_quality__1624681654_805badfa_progressive.jpg"
-     
-    },
-    {
-      
-      "name": "Sitting Room",
-      "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT-YQJTBefjONOIvqJpOvYV3rQii5AlV6XzrQEaqvQ8aUC6xjnaEEvGip_PvsNGJ44jfY&usqp=CAU"
-    },
-    {
-      
-      "name": "Bed Room",
-      "img":"https://static.wixstatic.com/media/1459a5b61b86349d0b30e53b2ed15e3d.jpg/v1/fill/w_568,h_440,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1459a5b61b86349d0b30e53b2ed15e3d.jpg"
-    }
-  ]
+  {
+    "name": "Dining Room",
+    "img": "https://media.karousell.com/media/photos/products/2021/6/26/dining_table_set_high_quality__1624681654_805badfa_progressive.jpg"
+  },
+  {
+    "name": "Sitting Room",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT-YQJTBefjONOIvqJpOvYV3rQii5AlV6XzrQEaqvQ8aUC6xjnaEEvGip_PvsNGJ44jfY&usqp=CAU"
+  },
+  {
+    "name": "Bed Room",
+    "img": "https://static.wixstatic.com/media/1459a5b61b86349d0b30e53b2ed15e3d.jpg/v1/fill/w_568,h_440,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/1459a5b61b86349d0b30e53b2ed15e3d.jpg"
+  }
+]
   

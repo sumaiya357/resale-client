@@ -9,13 +9,13 @@ const Rooms = () => {
     console.log('Details:',roomDetails)
    
     const [category,setCategory] =useState(null)
-    const[data, setData] = useState(null)
+   
     
     
     return (
        <section>
          <div>
-            <h2>hello sitting</h2>
+            
          {
                 roomDetails.map(singleDetails=>
                     <RoomsDetails
@@ -29,7 +29,8 @@ const Rooms = () => {
         { 
         category &&
             <Modal
-            category={category}>
+            category={category}
+            setCategory={setCategory}>
            </Modal>
         }
        </section>

@@ -29,73 +29,69 @@ const NavBar = () => {
                         <li>
                             <Link to='/'>Home</Link>
                         </li>
-
-                       {
+                       
+                        {
                         user?.uid ?
                         <li>
-                        <Link to='/logout'>Logout</Link>
+                        <Link ><button onClick={handleLogout}>
+                        Logout</button></Link>
                     </li>:
                      <li>
                      <Link to='/login'>Login</Link>
                  </li>
-                       }
-                        <li>
-                            <Link to='/signup'>SignUp</Link>
-                        </li>
+                       } 
 
-                         
-                        <li >
-                            <Link>
-                            {
-                        user?.uid ?
-                        <li>
-                        <Link to='/logout' >Dashboard</Link>
-                    </li>:
-                     <li>
-                     <Link to='/login' className='hidden'>Dashboard</Link>
-                 </li>
-                       }
-                               
-                            </Link>
-                        </li> 
+                     
 
-                        <li >
-                            <Link>
-                               My Orders
-                            </Link>
-                        </li>
 
-                        <li >
-                            <Link>
-                              Blog
-                            </Link>
-                        </li>
 
-                        <li>
-                            <Link>
-                              Add a Product
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                              My Product
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                              All Seller
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                            All Buyer
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                             Reported Items
-                            </Link>
-                        </li>
+
+                        <ul>
+                          {user?.uid?
+                        <>
+                        <li><Link to='/dashboard'>DashBoard</Link></li>
+                        </> 
+                        :
+                        <>
+                            <li><Link to='/signup'>SignUp</Link></li>
+                    
+
+                        </>
+                    }
+                          </ul>
+
+
+                        <ul>
+                          {user?.uid?
+                        <>
+                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='/orders'>Orders</Link></li>
+                        <li><Link to='/allbuyer'> All Buyer</Link></li>
+                        <li><Link to='/allseller'> All Seller</Link></li>
+                        <li><Link to='/allbuyer'> All Buyer</Link></li>
+                        <li><Link to='/myProduct'> My Product</Link></li>
+                        <li><Link to='/reportedItems'>Reported Items</Link></li>
+                        </> 
+                        :
+                        <>
+                            <li><Link to='/blog'>Blog</Link></li>
+                            
+                    
+
+                        </>
+                    }
+                          </ul>
+                          
+
+                         {
+                            user &&
+                           
+                          
+                                <li className='font-bold md:text-1xl border border-5xl'>
+                                  {user?.displayName}
+                                
+                                </li>
+                         }
                         </ul>
                     </div>
 
@@ -110,74 +106,86 @@ const NavBar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
 
-                    <li>
-                            <Link to='/'>My Home</Link>
-                        </li>
-                        {
-                        user?.uid ?
-                        <li>
-                        <Link ><button onClick={handleLogout}>
-                        Logout</button></Link>
-                    </li>:
-                     <li>
-                     <Link to='/login'>Login</Link>
-                 </li>
-                       }
-                        <li>
-                            <Link to='/signup'>SignUp</Link>
-                        </li>
+                   
 
-                        <li >
-                            <Link>
-                            {
-                        user?.uid ?
-                        <li>
-                        <Link to='/logout' >Dashboard</Link>
-                    </li>:
-                     <li>
-                     <Link to='/login' className='hidden'>Dashboard</Link>
-                 </li>
-                       }
-                               
-                            </Link>
-                        </li>
-                        <li >
-                            <Link>
-                               My Orders
-                            </Link>
-                        </li>
+                                    <li>
+                                        <Link to='/'>Home</Link>
+                                    </li>
 
-                        <li >
-                            <Link to='/blog'>Blog
-                            </Link>
-                        </li>
+                                {
+                                        user?.uid ?
+                                        <li>
+                                        <Link ><button onClick={handleLogout}>
+                                        Logout</button></Link>
+                                    </li>:
+                                    <li>
+                                        <Link to='/login'>Login</Link>
+                                    </li>
+                                } 
 
-                        <li>
-                            <Link>
-                              Add a Product
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                              My Product
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                              All Seller
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                            All Buyer
-                            </Link>
-                        </li>
-                        <li>
-                            <Link>
-                             Reported Items
-                            </Link>
-                        </li>
+
+
+
+                         <ul>
+                          {user?.uid?
+                        <>
+                        <li><Link to='/dashboard'>DashBoard</Link></li>
+                        </> 
+                        :
+                        <>
+                            <li><Link to='/signup'>SignUp</Link></li>
+                    
+
+                        </>
+                    }
+                          </ul>
+                                   
+                         
+                          {user?.uid?
+                        <>
+                        <li><Link to='/blog'>Blog</Link></li>
+                        <li><Link to='/orders'>Orders</Link></li>
+                        <li><Link to='/allbuyer'> All Buyer</Link></li>
+                        <li><Link to='/allseller'> All Seller</Link></li>
+                        <li><Link to='/allbuyer'> All Buyer</Link></li>
+                        <li><Link to='/myProduct'> My Product</Link></li>
+                        <li><Link to='/reportedItems'>Reported Items</Link></li>
+                        </> 
+                        :
+                        <>
+                            <li><Link to='/blog'>Blog</Link></li>
+                            
+                    
+
+                        </>
+                    }
+                        
+                                    
+
+                                    
+ 
+
+
+                       
+                           {
+                            user &&
+                           
+                          
+                                <li className='font-bold md:text-1xl border border-5xl'>
+                                  {user?.displayName}
+                                
+                                </li>
+                                
+                          
+                          
+                        }
+
+                        
+
+                                   
                     </ul>
+
+                   
                 </div>
                 
             </div>

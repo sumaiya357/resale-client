@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
-    const {createUser} = useContext(AuthContext)
+    const {createUser,user,setUser,updateUser, loading,googleSignIn} = useContext(AuthContext)
+    
+    const [err,setErr]= useState('');
+
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
 
     const handleSignUp = data => {
         console.log(data)
@@ -15,8 +23,32 @@ const SignUp = () => {
         .then(result => {
             const user = result.user
             console.log(user);
-          })
+            const userInfo ={
+                displayName: data.username
+            }
+            updateUser(userInfo)
+            .then(result => {})    
           .catch(error => console.log(error))
+
+          navigate(from, {replace: true});
+         })
+        
+           
+
+          .catch(error => {
+            console.log(error)
+           setErr(error.message)})
+    }
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleSignIn =() => {
+           googleSignIn(googleProvider)
+           .then(result => {
+            const user = result.user;
+             console.log(user)
+            
+        })
+        .catch(error => {
+            console.log(error)})
     }
     return (
         <div>
@@ -39,7 +71,7 @@ const SignUp = () => {
 
                             <label className="label"><span className="label-text" >Email</span></label>
 
-                            <input type="text" {...register("email",{ required:true})}
+                            <input type="email" {...register("email",{ required:true})}
                                 className="input input-bordered w-full max-w-xs" />
                             <input />
 
@@ -85,10 +117,16 @@ const SignUp = () => {
 
 
                         <input className='btn btn-slate text-white' value='SignUp' type="submit" />
-
+                      
+                      <div>
+                        {
+                            err && <p className='text-red-600'>{err}</p>
+                        }
+                      </div>
                     </form>
-                    <p>Already have a account? <Link to='/login' className='text-primary'>SignUp</Link></p>
-                    <button className="btn btn-outline btn-success">Continue with Google</button>
+                    <p>Already have a account? <Link to='/login' className='text-primary'>SignIn</Link></p>
+                    <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success">Continue with Google</button>
+               
                 </div>
             </div>
 

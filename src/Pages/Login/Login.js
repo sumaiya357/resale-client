@@ -1,21 +1,37 @@
-import React, { useContext } from 'react';
+import { GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider';
 
 const Login = () => {
+    const [error, setError] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { signIn } = useContext(AuthContext)
+    const { signIn,googleSignIn } = useContext(AuthContext)
+
+    
 
     const handleLogin = data => {
         console.log(data)
+        // setError('')
         signIn(data.email, data.password)
             .then(result => {
-                const user = result.user
+                const user = result.user;
+                setError('')
                 console.log(user)
+                navigate(from, {replace: true});
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.log(error.message);
+                setError(error.message);
+            })
     }
+     
+   
     return (
 
         <div className='h-[600px] flex justify-center items-center'>
@@ -59,9 +75,13 @@ const Login = () => {
 
                     <input className='btn btn-slate text-white' value='Login' type="submit" />
 
+                  
                 </form>
+
+
                 <p>New to this site? <Link to='/signup' className='text-primary'>Create new account</Link></p>
-                <button className="btn btn-outline btn-success">Continue with Google</button>
+               
+               
             </div>
         </div>
     );
